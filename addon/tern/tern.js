@@ -360,7 +360,7 @@
     function inner(varName) {
       var req = {type: "definition", variable: varName || null};
       var doc = findDoc(ts, cm.getDoc());
-      ts.server.request(buildRequest(ts, doc, req), function(error, data) {
+      ts.request(cm, req, function(error, data) {
         if (error) return showError(ts, cm, error);
         if (!data.file && data.url) { window.open(data.url); return; }
 
