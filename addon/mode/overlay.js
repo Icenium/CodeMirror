@@ -64,7 +64,7 @@ CodeMirror.overlayMode = function(base, overlay, combine) {
       else if (state.baseCur != null &&
                state.overlay.combineTokens ||
                combine && state.overlay.combineTokens == null)
-        return state.baseCur + " " + state.overlayCur;
+        return (state.baseCur + " " + state.overlayCur).trim();
       else return state.overlayCur;
     },
 
